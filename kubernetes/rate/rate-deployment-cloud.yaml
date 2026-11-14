@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: rate
+    tier: cloud
+  name: rate-cloud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: rate
+      tier: cloud
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+        sidecar.istio.io/statsInclusionPrefixes: cluster.outbound,cluster_manager,listener_manager,http_mixer_filter,tcp_mixer_filter,server,cluster.xds-grp,listener,connection_manager
+        sidecar.istio.io/statsInclusionRegexps: http.*
+      creationTimestamp: null
+      labels:
+        io.kompose.service: rate
+        tier: cloud
+    spec:
+      nodeSelector:            # [新增配置] 核心修改点
+        zone: cloud            # 强制调度到云中心节点
+      containers:
+        - command:
+            - /go/bin/rate
+          image: zw/hotelreservation:V5.0
+          imagePullPolicy: IfNotPresent
+          name: hotel-reserv-rate
+          ports:
+            - containerPort: 8084
+          resources:
+            requests:
+              memory: "3Gi"
+              cpu: "4000m"
+            limits:
+              memory: "4Gi"
+              cpu: "6000m"
+          env:  
+            - name: MEMC_TIMEOUT  
+              value: "5"  
+            - name: RATE_QUERY_OPTIMIZATION  
+              value: "true"
+            - name: GC  
+              value: "50"  # 降低GC目标百分比，更频繁回收
+            - name: LOG_LEVEL  
+              value: "DEBUG" 
+            - name: MEMC_MAX_IDLE_CONNS  
+              value: "100"
+      restartPolicy: Always
+status: {}

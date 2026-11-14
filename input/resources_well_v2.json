@@ -1,0 +1,218 @@
+{
+    "consul": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "jaeger": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "memcached-profile": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "memcached-rate": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "memcached-reserve": {
+        "limits": {
+            "cpu": "2000m"
+        },
+        "requests": {
+            "cpu": "1500m"
+        }
+    },
+    "mongodb-geo": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "mongodb-profile": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "mongodb-rate": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "mongodb-recommendation": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "mongodb-reservation": {
+        "requests": {
+            "cpu": "500m"
+        },
+        "limits": {
+            "cpu": "1100m"
+        }
+    },
+    "mongodb-user": {
+        "requests": {
+            "cpu": "180m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+     "frontend-cloud": {
+        "requests": {
+            "cpu": "500m"
+        },
+        "limits": {
+            "cpu": "3000m"
+        }
+    },
+    "frontend-edge": {
+        "requests": {
+            "cpu": "300m"
+        },
+        "limits": {
+            "cpu": "3000m"
+        }
+    },
+    "geo-cloud": {
+        "requests": {
+            "cpu": "100m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "geo-edge": {
+        "requests": {
+            "cpu": "100m"
+        },
+        "limits": {
+            "cpu": "500m"
+        }
+    },
+    "profile-cloud": {
+        "requests": {
+            "cpu": "100m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "profile-edge": {
+        "requests": {
+            "cpu": "100m"
+        },
+        "limits": {
+            "cpu": "500m"
+        }
+    },
+    "rate-cloud": {
+        "requests": {
+            "cpu": "100m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "rate-edge": {
+        "requests": {
+            "cpu": "100m"
+        },
+        "limits": {
+            "cpu": "600m"
+        }
+    },
+    "recommendation-cloud": {
+        "requests": {
+            "cpu": "150m"
+        },
+        "limits": {
+            "cpu": "2000m"
+        }
+    },
+    "recommendation-edge": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "600m"
+        }
+    },
+    "reservation-cloud": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "2000m"
+        }
+    },
+    "reservation-edge": {
+        "requests": {
+            "cpu": "200m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "search-cloud": {
+        "requests": {
+            "cpu": "500m"
+        },
+        "limits": {
+            "cpu": "3000m"
+        }
+    },
+    "search-edge": {
+        "requests": {
+            "cpu": "300m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "user-cloud": {
+        "requests": {
+            "cpu": "100m"
+        },
+        "limits": {
+            "cpu": "1000m"
+        }
+    },
+    "user-edge": {
+        "requests": {
+            "cpu": "100m"
+        },
+        "limits": {
+            "cpu": "500m"
+        }
+    }
+}
